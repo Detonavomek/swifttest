@@ -11,8 +11,12 @@
 		8927E6061D33035200F9D03F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927E6051D33035200F9D03F /* ViewController.swift */; };
 		8927E6091D33035200F9D03F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8927E6071D33035200F9D03F /* Main.storyboard */; };
 		8927E60C1D33035200F9D03F /* PremierLeague.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8927E60A1D33035200F9D03F /* PremierLeague.xcdatamodeld */; };
-		8927E60E1D33035200F9D03F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8927E60D1D33035200F9D03F /* Assets.xcassets */; };
 		8927E6111D33035200F9D03F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8927E60F1D33035200F9D03F /* LaunchScreen.storyboard */; };
+		8927E61B1D330A5200F9D03F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8927E61A1D330A5200F9D03F /* Assets.xcassets */; };
+		8927E61D1D330B5900F9D03F /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927E61C1D330B5900F9D03F /* TeamsViewController.swift */; };
+		8927E61F1D330B7900F9D03F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927E61E1D330B7900F9D03F /* Team.swift */; };
+		8927E6211D330BF500F9D03F /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927E6201D330BF500F9D03F /* SampleData.swift */; };
+		8927E6231D330D0B00F9D03F /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927E6221D330D0B00F9D03F /* TeamCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +25,13 @@
 		8927E6051D33035200F9D03F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8927E6081D33035200F9D03F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8927E60B1D33035200F9D03F /* PremierLeague.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PremierLeague.xcdatamodel; sourceTree = "<group>"; };
-		8927E60D1D33035200F9D03F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8927E6101D33035200F9D03F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8927E6121D33035200F9D03F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8927E61A1D330A5200F9D03F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8927E61C1D330B5900F9D03F /* TeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
+		8927E61E1D330B7900F9D03F /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		8927E6201D330BF500F9D03F /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		8927E6221D330D0B00F9D03F /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +67,14 @@
 				8927E6031D33035200F9D03F /* AppDelegate.swift */,
 				8927E6051D33035200F9D03F /* ViewController.swift */,
 				8927E6071D33035200F9D03F /* Main.storyboard */,
-				8927E60D1D33035200F9D03F /* Assets.xcassets */,
+				8927E61A1D330A5200F9D03F /* Assets.xcassets */,
 				8927E60F1D33035200F9D03F /* LaunchScreen.storyboard */,
 				8927E6121D33035200F9D03F /* Info.plist */,
 				8927E60A1D33035200F9D03F /* PremierLeague.xcdatamodeld */,
+				8927E61C1D330B5900F9D03F /* TeamsViewController.swift */,
+				8927E61E1D330B7900F9D03F /* Team.swift */,
+				8927E6201D330BF500F9D03F /* SampleData.swift */,
+				8927E6221D330D0B00F9D03F /* TeamCell.swift */,
 			);
 			path = PremierLeague;
 			sourceTree = "<group>";
@@ -126,7 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8927E6111D33035200F9D03F /* LaunchScreen.storyboard in Resources */,
-				8927E60E1D33035200F9D03F /* Assets.xcassets in Resources */,
+				8927E61B1D330A5200F9D03F /* Assets.xcassets in Resources */,
 				8927E6091D33035200F9D03F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +151,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8927E6061D33035200F9D03F /* ViewController.swift in Sources */,
+				8927E6211D330BF500F9D03F /* SampleData.swift in Sources */,
+				8927E61D1D330B5900F9D03F /* TeamsViewController.swift in Sources */,
+				8927E6231D330D0B00F9D03F /* TeamCell.swift in Sources */,
 				8927E6041D33035200F9D03F /* AppDelegate.swift in Sources */,
+				8927E61F1D330B7900F9D03F /* Team.swift in Sources */,
 				8927E60C1D33035200F9D03F /* PremierLeague.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

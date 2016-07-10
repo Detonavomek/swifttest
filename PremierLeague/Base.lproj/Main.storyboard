@@ -72,6 +72,29 @@
                     <view key="view" contentMode="scaleToFill" id="VzZ-Mp-EaE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6C2-k5-yfy">
+                                <rect key="frame" x="468" y="81" width="120" height="120"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c65-jQ-KEy">
+                                <rect key="frame" x="20" y="94" width="340" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbQ-JZ-Po0">
+                                <rect key="frame" x="20" y="235" width="420" height="85"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW3-02-H5p">
+                                <rect key="frame" x="20" y="404" width="389" height="117"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -82,7 +105,7 @@
         <!--League-->
         <scene sceneID="th2-ah-x74">
             <objects>
-                <viewController id="CAa-S4-Q14" sceneMemberID="viewController">
+                <viewController id="CAa-S4-Q14" customClass="LeagueViewController" customModule="PremierLeague" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3JS-QY-SKQ"/>
                         <viewControllerLayoutGuide type="bottom" id="eNV-p4-yNp"/>
@@ -90,9 +113,27 @@
                     <view key="view" contentMode="scaleToFill" id="Law-jN-i6M">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="??????" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwZ-As-dtj">
+                                <rect key="frame" x="275" y="28" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ovn-T8-fBs">
+                                <rect key="frame" x="284" y="92" width="32" height="30"/>
+                                <state key="normal" title="Do it"/>
+                                <connections>
+                                    <action selector="buttonClick:" destination="CAa-S4-Q14" eventType="touchUpInside" id="oiW-QZ-XCF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="League" image="league" id="o42-KD-kSZ"/>
+                    <connections>
+                        <outlet property="testLebel" destination="TwZ-As-dtj" id="KoU-qO-S00"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSs-Mk-Y28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,8 +149,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="g5Y-lp-7PL" kind="relationship" relationship="viewControllers" id="nPC-5q-ynR"/>
                         <segue destination="CAa-S4-Q14" kind="relationship" relationship="viewControllers" id="OxH-Mb-nJF"/>
+                        <segue destination="g5Y-lp-7PL" kind="relationship" relationship="viewControllers" id="nPC-5q-ynR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APH-Zk-6mp" userLabel="First Responder" sceneMemberID="firstResponder"/>

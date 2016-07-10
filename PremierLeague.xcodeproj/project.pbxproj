@@ -17,6 +17,7 @@
 		8927E61F1D330B7900F9D03F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927E61E1D330B7900F9D03F /* Team.swift */; };
 		8927E6211D330BF500F9D03F /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927E6201D330BF500F9D03F /* SampleData.swift */; };
 		8927E6231D330D0B00F9D03F /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927E6221D330D0B00F9D03F /* TeamCell.swift */; };
+		8927E6251D33134500F9D03F /* LeagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927E6241D33134500F9D03F /* LeagueViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8927E61E1D330B7900F9D03F /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		8927E6201D330BF500F9D03F /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		8927E6221D330D0B00F9D03F /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		8927E6241D33134500F9D03F /* LeagueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeagueViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				8927E61E1D330B7900F9D03F /* Team.swift */,
 				8927E6201D330BF500F9D03F /* SampleData.swift */,
 				8927E6221D330D0B00F9D03F /* TeamCell.swift */,
+				8927E6241D33134500F9D03F /* LeagueViewController.swift */,
 			);
 			path = PremierLeague;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				8927E6041D33035200F9D03F /* AppDelegate.swift in Sources */,
 				8927E61F1D330B7900F9D03F /* Team.swift in Sources */,
 				8927E60C1D33035200F9D03F /* PremierLeague.xcdatamodeld in Sources */,
+				8927E6251D33134500F9D03F /* LeagueViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

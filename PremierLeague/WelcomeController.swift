@@ -23,7 +23,7 @@ class WelcomeController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let leagueTeamCtrl:LeagueTeamCtrl = LeagueTeamCtrl()
+        let leagueTeamCtrl:LeagueTeamCore = LeagueTeamCore()
         leagueTeamCtrl.updateLeagueTeams()
     }
     

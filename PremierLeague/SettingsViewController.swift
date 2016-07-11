@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func updateData(sender: AnyObject) {
-        let leagueTeamCtrl:LeagueTeamCtrl = LeagueTeamCtrl()
+        let leagueTeamCtrl:LeagueTeamCore = LeagueTeamCore()
         leagueTeamCtrl.updateLeagueTeams()
         updateTimeLabel.text = "Last update: " + LeagueData.lastUpdate
     }

@@ -1,33 +1,13 @@
 import Foundation
 
-class LeagueTeamAPI
+class LeagueTeamAPI: BaseAPI
 {
     
-    var urlPath: String
-    var url: NSURL
-    var request1: NSURLRequest
-    var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>
-    var responseObj: [String: AnyObject]
     var leagueTeams:[LeagueTeam]
     
-    init(urlPath:String){
-        self.urlPath = urlPath
-        self.url = NSURL(string: urlPath)!
-        self.request1 = NSURLRequest(URL: url)
-        self.response=nil
-        self.responseObj = [:];
+    init(){
         self.leagueTeams = [LeagueTeam]()
-    }
-    
-    func Req(){
-        do{
-            let dataVal = try NSURLConnection.sendSynchronousRequest(request1, returningResponse: response)
-            if let jsonResult = try NSJSONSerialization.JSONObjectWithData(dataVal, options: []) as? NSDictionary {
-                self.responseObj = (jsonResult as? [String: AnyObject])!
-            }
-        }catch let error as ErrorType{
-            print(error)
-        }
+        super.init(urlPath: "http://api.football-data.org/v1/competitions/398/leagueTable")
     }
     
     func parse(){

@@ -109,6 +109,39 @@
             </objects>
             <point key="canvasLocation" x="2046" y="-221"/>
         </scene>
+        <!--Welcome Controller-->
+        <scene sceneID="GUh-zt-dbR">
+            <objects>
+                <viewController id="N2E-pP-uDH" customClass="WelcomeController" customModule="PremierLeague" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IgS-TK-DqH"/>
+                        <viewControllerLayoutGuide type="bottom" id="b1g-9J-7bE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5yQ-J2-8A9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyy-Up-2nc">
+                                <rect key="frame" x="250" y="20" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZB-lu-4k4">
+                                <rect key="frame" x="268" y="49" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="BEW-du-GNb" kind="show" id="m4D-Zd-R5s"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sKZ-Kv-UfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1222" y="-230"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2B6-9s-9gY">
             <objects>
@@ -119,6 +152,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="FDz-tE-Rmv" kind="relationship" relationship="viewControllers" id="cl4-mU-YjH"/>
                         <segue destination="Gn7-j1-TAE" kind="relationship" relationship="viewControllers" id="9AG-y3-8eI"/>
                         <segue destination="g5Y-lp-7PL" kind="relationship" relationship="viewControllers" id="nPC-5q-ynR"/>
                     </connections>
@@ -320,9 +354,66 @@
             </objects>
             <point key="canvasLocation" x="423" y="623"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="1Dt-iC-pGV">
+            <objects>
+                <viewController id="N8K-Jw-eDo" customClass="SettingsViewController" customModule="PremierLeague" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7IO-fG-7dX"/>
+                        <viewControllerLayoutGuide type="bottom" id="NDK-8i-H9E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="omL-VG-NGj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last update: 00-00-0000 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJz-P3-blU">
+                                <rect key="frame" x="20" y="72" width="336" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNq-Ay-qs9">
+                                <rect key="frame" x="20" y="101" width="85" height="30"/>
+                                <state key="normal" title="Update data"/>
+                                <connections>
+                                    <action selector="updateData:" destination="N8K-Jw-eDo" eventType="touchUpInside" id="IPn-kX-H3b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="sre-ed-LhV"/>
+                    <connections>
+                        <outlet property="updateTimeLabel" destination="EJz-P3-blU" id="TxH-D0-REn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FB5-Oi-61h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423" y="1314"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="FbL-IH-m4R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FDz-tE-Rmv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="CZi-Xl-VvL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UK6-fc-T0c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="N8K-Jw-eDo" kind="relationship" relationship="rootViewController" id="c2a-np-fVk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Gw-Fc-bGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-514" y="1314"/>
+        </scene>
     </scenes>
     <resources>
         <image name="league" width="30" height="30"/>
+        <image name="settings" width="30" height="30"/>
         <image name="teams" width="30" height="30"/>
     </resources>
 </document>

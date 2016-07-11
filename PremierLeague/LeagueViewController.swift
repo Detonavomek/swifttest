@@ -14,43 +14,6 @@ class LeagueViewController: UITableViewController {
     var leagueTeamsOld:[LeagueTeam] = leagueTeamsData
     
     var leagueTeams = [NSManagedObject]()
-    
-    func saveLeagueTeam(leagueTeam: LeagueTeam) {
-        //1
-        let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext
-        
-        //2
-        let entity =  NSEntityDescription.entityForName("LeagueTeam",
-                                                        inManagedObjectContext:managedContext)
-        
-        let leagueTeamObj = NSManagedObject(entity: entity!,
-                                     insertIntoManagedObjectContext: managedContext)
-        
-        //3
-        leagueTeamObj.setValue(leagueTeam.number, forKey: "number")
-        leagueTeamObj.setValue(leagueTeam.name, forKey: "name")
-        leagueTeamObj.setValue(leagueTeam.P, forKey: "p")
-        leagueTeamObj.setValue(leagueTeam.W, forKey: "w")
-        leagueTeamObj.setValue(leagueTeam.D, forKey: "d")
-        leagueTeamObj.setValue(leagueTeam.L, forKey: "l")
-        leagueTeamObj.setValue(leagueTeam.GF, forKey: "gf")
-        leagueTeamObj.setValue(leagueTeam.GA, forKey: "ga")
-        leagueTeamObj.setValue(leagueTeam.GD, forKey: "gd")
-        leagueTeamObj.setValue(leagueTeam.Pts, forKey: "pts")
-
-        
-        //4
-        do {
-            try managedContext.save()
-            //5
-            leagueTeams.append(leagueTeamObj)
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

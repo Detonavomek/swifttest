@@ -7,10 +7,50 @@
 //
 
 import UIKit
+import CoreData
 
 class LeagueViewController: UITableViewController {
     
-    var leagueTeams:[LeagueTeam] = leagueTeamsData
+    var leagueTeamsOld:[LeagueTeam] = leagueTeamsData
+    
+    var leagueTeams = [NSManagedObject]()
+    
+    func saveLeagueTeam(leagueTeam: LeagueTeam) {
+        //1
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("LeagueTeam",
+                                                        inManagedObjectContext:managedContext)
+        
+        let leagueTeamObj = NSManagedObject(entity: entity!,
+                                     insertIntoManagedObjectContext: managedContext)
+        
+        //3
+        leagueTeamObj.setValue(leagueTeam.number, forKey: "number")
+        leagueTeamObj.setValue(leagueTeam.name, forKey: "name")
+        leagueTeamObj.setValue(leagueTeam.P, forKey: "p")
+        leagueTeamObj.setValue(leagueTeam.W, forKey: "w")
+        leagueTeamObj.setValue(leagueTeam.D, forKey: "d")
+        leagueTeamObj.setValue(leagueTeam.L, forKey: "l")
+        leagueTeamObj.setValue(leagueTeam.GF, forKey: "gf")
+        leagueTeamObj.setValue(leagueTeam.GA, forKey: "ga")
+        leagueTeamObj.setValue(leagueTeam.GD, forKey: "gd")
+        leagueTeamObj.setValue(leagueTeam.Pts, forKey: "pts")
+
+        
+        //4
+        do {
+            try managedContext.save()
+            //5
+            leagueTeams.append(leagueTeamObj)
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +65,6 @@ class LeagueViewController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "                                 P   W  D   L   GF  GA   GD   Pts"
     }
-    
-//    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let vw = UIView()
-//        vw.backgroundColor = UIColor.redColor()
-//        
-//        return vw
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -54,9 +87,39 @@ class LeagueViewController: UITableViewController {
         -> UITableViewCell {
             let cell = tableView.dequeueReusableCellWithIdentifier("LeagueTeamCell", forIndexPath: indexPath) as! LeagueTeamCell
             
-            let leagueTeam = leagueTeams[indexPath.row] as LeagueTeam
+//            let person = people[indexPath.row]
+//            
+//            cell!.textLabel!.text =
+//                person.valueForKey("name") as? String
+
+            
+            let leagueTeam = leagueTeamsOld[indexPath.row] as LeagueTeam
             cell.leagueTeam = leagueTeam
             return cell
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        self.saveLeagueTeam(LeagueTeam(number: 9, name:"name 9", P:2, W:2, D:2, L:2, GF:2, GA:2, GD:2, Pts:2))
+        
+        //1
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "LeagueTeam")
+        
+        //3
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            leagueTeams = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
     }
 
     /*

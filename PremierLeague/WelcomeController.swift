@@ -25,6 +25,8 @@ class WelcomeController: UIViewController {
         super.viewWillAppear(animated)
         let leagueTeamCtrl:LeagueTeamCore = LeagueTeamCore()
         leagueTeamCtrl.updateLeagueTeams()
+        let teamCtrl:TeamCore = TeamCore()
+        teamCtrl.updateTeams()
     }
     
 

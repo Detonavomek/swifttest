@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TeamCell: UITableViewCell {
     
@@ -18,10 +19,10 @@ class TeamCell: UITableViewCell {
         return UIImage(named: imageName)
     }
     
-    var team: Team! {
+    var team: NSManagedObject! {
         didSet {
-            nameLabel.text = team.name
-            logoImageView.image = imageForLofo(team.logo!)
+            nameLabel.text = String(team.valueForKey("name")!)
+            logoImageView.image = imageForLofo(String(team.valueForKey("logo")!))
         }
     }
 

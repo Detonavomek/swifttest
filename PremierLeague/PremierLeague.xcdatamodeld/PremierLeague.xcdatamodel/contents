@@ -16,10 +16,9 @@
         <attribute name="history" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="players" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Team" positionX="-36" positionY="9" width="128" height="105"/>
         <element name="LeagueTeam" positionX="0" positionY="72" width="128" height="195"/>
+        <element name="Team" positionX="-36" positionY="9" width="128" height="90"/>
     </elements>
 </model>

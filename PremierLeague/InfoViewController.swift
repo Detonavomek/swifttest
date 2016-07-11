@@ -7,15 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class InfoViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var historyLabel: UILabel!
-    @IBOutlet weak var playersLabel: UILabel!
     @IBOutlet weak var logoImage: UIImageView!
 
-    var team:Team!
+    var team:NSManagedObject!
     
     func imageForLofo(logo:String) -> UIImage? {
         let imageName = "teams"
@@ -23,12 +23,10 @@ class InfoViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        nameLabel.text = team.name
-        historyLabel.text = team.history
-        playersLabel.text = team.players
-        logoImage.image = imageForLofo(team.logo!)
+        nameLabel.text = String(team.valueForKey("name")!)
+        historyLabel.text = String(team.valueForKey("history")!)
+        logoImage.image = imageForLofo(String(team.valueForKey("logo")!))
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +38,5 @@ class InfoViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

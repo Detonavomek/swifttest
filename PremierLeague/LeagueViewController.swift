@@ -11,8 +11,6 @@ import CoreData
 
 class LeagueViewController: UITableViewController {
     
-    var leagueTeamsOld:[LeagueTeam] = leagueTeamsData
-    
     var leagueTeams = [NSManagedObject]()
 
     override func viewDidLoad() {

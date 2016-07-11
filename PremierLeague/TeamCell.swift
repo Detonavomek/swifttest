@@ -14,7 +14,6 @@ class TeamCell: UITableViewCell {
     @IBOutlet weak var logoImageView: UIImageView!
     
     func imageForLofo(logo:String) -> UIImage? {
-//        let imageName = "logo"
         let imageName = "teams"
         return UIImage(named: imageName)
     }

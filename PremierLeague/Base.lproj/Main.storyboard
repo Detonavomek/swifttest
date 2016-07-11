@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Teams View Controller-->
+        <!--Teams-->
         <scene sceneID="J54-k1-CTa">
             <objects>
                 <tableViewController id="yAa-W2-lbv" customClass="TeamsViewController" customModule="PremierLeague" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,6 +47,7 @@
                                 <connections>
                                     <outlet property="logoImageView" destination="odc-Ed-2uK" id="7Kt-Dg-WFd"/>
                                     <outlet property="nameLabel" destination="OlG-m7-Q3O" id="YeZ-nR-c5Z"/>
+                                    <segue destination="iMM-aJ-15p" kind="show" identifier="infoSegue" id="Ymz-fz-rgI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -55,16 +56,16 @@
                             <outlet property="delegate" destination="yAa-W2-lbv" id="6bJ-SD-6UW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4Ib-lX-T8V"/>
+                    <navigationItem key="navigationItem" title="Teams" id="4Ib-lX-T8V"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3k-tL-yoo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1242" y="-216"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="5cs-wR-ywK">
             <objects>
-                <viewController id="iMM-aJ-15p" sceneMemberID="viewController">
+                <viewController id="iMM-aJ-15p" customClass="InfoViewController" customModule="PremierLeague" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HLW-iX-pUy"/>
                         <viewControllerLayoutGuide type="bottom" id="4vV-ms-7vR"/>
@@ -97,6 +98,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="historyLabel" destination="gbQ-JZ-Po0" id="zyl-Ej-p2X"/>
+                        <outlet property="logoImage" destination="6C2-k5-yfy" id="pWi-yS-0S0"/>
+                        <outlet property="nameLabel" destination="c65-jQ-KEy" id="Mh7-V0-mxC"/>
+                        <outlet property="playersLabel" destination="RW3-02-H5p" id="YdB-nt-RLP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTN-Bd-URZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,8 +156,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="CAa-S4-Q14" kind="relationship" relationship="viewControllers" id="OxH-Mb-nJF"/>
                         <segue destination="g5Y-lp-7PL" kind="relationship" relationship="viewControllers" id="nPC-5q-ynR"/>
+                        <segue destination="CAa-S4-Q14" kind="relationship" relationship="viewControllers" id="OxH-Mb-nJF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APH-Zk-6mp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -160,7 +167,7 @@
         <!--Teams-->
         <scene sceneID="FGq-vq-OgS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g5Y-lp-7PL" sceneMemberID="viewController">
+                <navigationController title="Teams" automaticallyAdjustsScrollViewInsets="NO" id="g5Y-lp-7PL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Teams" image="teams" id="tOK-EN-3WU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gJg-vL-YcB">

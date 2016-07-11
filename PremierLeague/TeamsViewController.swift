@@ -47,6 +47,16 @@ class TeamsViewController: UITableViewController {
             cell.team = team
             return cell
     }
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if  segue.identifier == "infoSegue",
+            let destination = segue.destinationViewController as? InfoViewController,
+            infoIndex = tableView.indexPathForSelectedRow?.row
+        {
+            destination.team = teams[infoIndex]
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

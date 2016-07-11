@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LeagueTeamCell: UITableViewCell {
     
@@ -21,18 +22,18 @@ class LeagueTeamCell: UITableViewCell {
     @IBOutlet weak var GDLabel: UILabel!
     @IBOutlet weak var PtsLabel: UILabel!
     
-    var leagueTeam: LeagueTeam! {
+    var leagueTeam: NSManagedObject! {
         didSet {
-            numberLabel.text = String(leagueTeam.number)
-            nameLabel.text = leagueTeam.name
-            PLabel.text = String(leagueTeam.P)
-            WLabel.text = String(leagueTeam.W)
-            DLabel.text = String(leagueTeam.D)
-            LLabel.text = String(leagueTeam.L)
-            GFLabel.text = String(leagueTeam.GF)
-            GALabel.text = String(leagueTeam.GA)
-            GDLabel.text = String(leagueTeam.GD)
-            PtsLabel.text = String(leagueTeam.Pts)
+            numberLabel.text = String(leagueTeam.valueForKey("number")!)
+            nameLabel.text = String(leagueTeam.valueForKey("name")!)
+            PLabel.text = String(leagueTeam.valueForKey("p")!)
+            WLabel.text = String(leagueTeam.valueForKey("w")!)
+            DLabel.text = String(leagueTeam.valueForKey("d")!)
+            LLabel.text = String(leagueTeam.valueForKey("l")!)
+            GFLabel.text = String(leagueTeam.valueForKey("gf")!)
+            GALabel.text = String(leagueTeam.valueForKey("ga")!)
+            GDLabel.text = String(leagueTeam.valueForKey("gd")!)
+            PtsLabel.text = String(leagueTeam.valueForKey("pts")!)
         }
     }
 

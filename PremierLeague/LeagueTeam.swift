@@ -11,8 +11,9 @@ struct LeagueTeam {
     var GA: Int
     var GD: Int
     var Pts: Int
+    var logo: String?
     
-    init(number: Int, name: String?, P: Int, W: Int, D: Int, L: Int, GF: Int, GA: Int, GD: Int, Pts: Int) {
+    init(number: Int, name: String?, P: Int, W: Int, D: Int, L: Int, GF: Int, GA: Int, GD: Int, Pts: Int, logo: String?) {
         self.number = number
         self.name = name
         self.P = P
@@ -23,6 +24,6 @@ struct LeagueTeam {
         self.GA = GA
         self.GD = GD
         self.Pts = Pts
-
+        self.logo = logo
     }
 }

@@ -38,7 +38,8 @@ class TeamCore: BaseCore {
             let teamObj:TeamAPI=TeamAPI(teamName: name)
             teamObj.Req()
             teamObj.parse()
-            teamObj.team.logo = String(leagueTeam.valueForKey("number")!)
+            teamObj.team.logo = String(leagueTeam.valueForKey("logo")!)
+                            .stringByReplacingOccurrencesOfString("http", withString: "https")
             saveTeam(teamObj.team)
         }
         

@@ -14,15 +14,9 @@ class TeamCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView!
     
-    func imageForLofo(logo:String) -> UIImage? {
-        let imageName = "teams"
-        return UIImage(named: imageName)
-    }
-    
     var team: NSManagedObject! {
         didSet {
             nameLabel.text = String(team.valueForKey("name")!)
-            logoImageView.image = imageForLofo(String(team.valueForKey("logo")!))
         }
     }
 

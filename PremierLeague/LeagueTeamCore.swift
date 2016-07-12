@@ -31,6 +31,7 @@ class LeagueTeamCore: BaseCore {
         leagueTeamObj.setValue(leagueTeam.GA, forKey: "ga")
         leagueTeamObj.setValue(leagueTeam.GD, forKey: "gd")
         leagueTeamObj.setValue(leagueTeam.Pts, forKey: "pts")
+        leagueTeamObj.setValue(leagueTeam.logo, forKey: "logo")
         
         postSave()
     }

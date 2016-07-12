@@ -23,10 +23,10 @@ class WelcomeController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let leagueTeamCtrl:LeagueTeamCore = LeagueTeamCore()
-        leagueTeamCtrl.updateLeagueTeams()
-        let teamCtrl:TeamCore = TeamCore()
-        teamCtrl.updateTeams()
+//        let leagueTeamCtrl:LeagueTeamCore = LeagueTeamCore()
+//        leagueTeamCtrl.updateLeagueTeams()
+//        let teamCtrl:TeamCore = TeamCore()
+//        teamCtrl.updateTeams()
     }
     
 

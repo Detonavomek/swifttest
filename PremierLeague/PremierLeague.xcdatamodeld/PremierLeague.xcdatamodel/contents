@@ -6,6 +6,7 @@
         <attribute name="gd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="gf" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="l" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="p" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -18,7 +19,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="LeagueTeam" positionX="0" positionY="72" width="128" height="195"/>
+        <element name="LeagueTeam" positionX="0" positionY="72" width="128" height="210"/>
         <element name="Team" positionX="-36" positionY="9" width="128" height="90"/>
     </elements>
 </model>

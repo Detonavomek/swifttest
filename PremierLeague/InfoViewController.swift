@@ -14,23 +14,27 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var historyLabel: UILabel!
     @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var webView: UIWebView!
 
     var team:NSManagedObject!
     
-    func imageForLofo(logo:String) -> UIImage? {
-        let imageName = "teams"
-        return UIImage(named: imageName)
-    }
-
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         nameLabel.text = String(team.valueForKey("name")!)
         historyLabel.text = String(team.valueForKey("history")!)
-        logoImage.image = imageForLofo(String(team.valueForKey("logo")!))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let url = NSURL(string: "https://upload.wikimedia.org/wikipedia/en/6/63/Leicester02.png") {
+            if let data = NSData(contentsOfURL: url) {
+                logoImage.image = UIImage(data: data)
+            }        
+        }
+//        var url:NSURL = NSURL(string: "https://upload.wikimedia.org/wikipedia/en/6/63/Leicester02.png")!
+//        var request: NSURLRequest = NSURLRequest(URL: url)
+//        webView.loadRequest(request)
         // Do any additional setup after loading the view.
     }
 

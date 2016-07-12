@@ -13,7 +13,7 @@ class BaseCore {
         self.managedContext = self.appDelegate.managedObjectContext
     }
     
-    func changeUpdateDate() {
+    static func changeUpdateDate() {
         let lastUpdateDate:NSDate = NSDate()
         let dateFormatter:NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"

@@ -5,6 +5,25 @@ import Foundation
 
 class LeagueTeamCore: BaseCore {
     
+    static func getLeagueTeams() -> [NSManagedObject] {
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+    
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "LeagueTeam")
+        
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            return results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        return []
+    }
+    
     func updateLeagueTeams() {
         let leagueTeamObj:LeagueTeamAPI=LeagueTeamAPI()
         leagueTeamObj.Req()
@@ -15,7 +34,7 @@ class LeagueTeamCore: BaseCore {
             saveLeagueTeam(leagueTeam)
         }
         
-        changeUpdateDate()
+        BaseCore.changeUpdateDate()
     }
     
     func saveLeagueTeam(leagueTeam: LeagueTeam) {

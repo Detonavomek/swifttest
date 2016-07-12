@@ -24,16 +24,14 @@ class WelcomeController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let teamCore:TeamCore = TeamCore()
-        teamCore.getTeams()
-        let teams = teamCore.leagueTeams
+        let teams = TeamCore.getTeams()
         if teams.count == 0 {
             let leagueTeamCore:LeagueTeamCore = LeagueTeamCore()
             leagueTeamCore.updateLeagueTeams()
             let teamCore:TeamCore = TeamCore()
             teamCore.updateTeams()
         }
-        teamCore.changeUpdateDate()
+        BaseCore.changeUpdateDate()
     }
     
 

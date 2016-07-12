@@ -12,11 +12,18 @@ import CoreData
 class TeamCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var logoWebView: UIWebView!
     
     var team: NSManagedObject! {
         didSet {
             nameLabel.text = String(team.valueForKey("name")!)
+            var image=String(team.valueForKey("logo")!)
+            if  let url:NSURL = NSURL(string: image){
+                if let request: NSURLRequest = NSURLRequest(URL: url){
+                    let texttemp = "<img src="+image+" height=\"34\" width=\"34\"/>"
+                    logoWebView.loadHTMLString(texttemp, baseURL: url)
+                }
+            }
         }
     }
 

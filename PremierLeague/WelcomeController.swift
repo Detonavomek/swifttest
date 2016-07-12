@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class WelcomeController: UIViewController {
 
@@ -23,21 +24,18 @@ class WelcomeController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        let leagueTeamCtrl:LeagueTeamCore = LeagueTeamCore()
-//        leagueTeamCtrl.updateLeagueTeams()
-//        let teamCtrl:TeamCore = TeamCore()
-//        teamCtrl.updateTeams()
+        let teamCore:TeamCore = TeamCore()
+        teamCore.getTeams()
+        let teams = teamCore.leagueTeams
+        if teams.count == 0 {
+            let leagueTeamCore:LeagueTeamCore = LeagueTeamCore()
+            leagueTeamCore.updateLeagueTeams()
+            let teamCore:TeamCore = TeamCore()
+            teamCore.updateTeams()
+        }
+        teamCore.changeUpdateDate()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -1,19 +1,14 @@
-//
-//  TeamCell.swift
-//  PremierLeague
-//
-//  Created by anton on 7/11/16.
-//  Copyright © 2016 organization. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
+//Team information from team list view controller
 class TeamCell: UITableViewCell {
     
+    //Bind view objects
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var logoWebView: UIWebView!
     
+    //Set name and download image from team logo url and show it at the page using UIWebView
     var team: NSManagedObject! {
         didSet {
             nameLabel.text = String(team.valueForKey("name")!)

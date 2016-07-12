@@ -388,6 +388,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="sre-ed-LhV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="updateButton" destination="bNq-Ay-qs9" id="UoY-Sq-o4w"/>
                         <outlet property="updateTimeLabel" destination="EJz-P3-blU" id="TxH-D0-REn"/>
                     </connections>
                 </viewController>

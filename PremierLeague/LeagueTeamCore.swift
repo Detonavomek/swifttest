@@ -3,9 +3,11 @@ import CoreData
 
 import Foundation
 
+//League team class work with CoreData
 class LeagueTeamCore: BaseCore {
     
     static func getLeagueTeams() -> [NSManagedObject] {
+        //Get list of league teams
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
     
@@ -16,6 +18,7 @@ class LeagueTeamCore: BaseCore {
         do {
             let results =
                 try managedContext.executeFetchRequest(fetchRequest)
+            //Return list of teams as NSManagedObjects
             return results as! [NSManagedObject]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
@@ -25,19 +28,25 @@ class LeagueTeamCore: BaseCore {
     }
     
     func updateLeagueTeams() {
+        //Generate league team object
         let leagueTeamObj:LeagueTeamAPI=LeagueTeamAPI()
         leagueTeamObj.Req()
         leagueTeamObj.parse()
         
+        //Clean information about league teams in CoreData
         deleteEntityObjects("LeagueTeam")
+        
         for leagueTeam in leagueTeamObj.leagueTeams {
+            //Save league team object
             saveLeagueTeam(leagueTeam)
         }
         
+        //Update last update datetime
         BaseCore.changeUpdateDate()
     }
     
     func saveLeagueTeam(leagueTeam: LeagueTeam) {
+        //Save team to SQLite database using CoreData
         let leagueTeamObj = preSave("LeagueTeam")
         
         leagueTeamObj.setValue(leagueTeam.number, forKey: "number")

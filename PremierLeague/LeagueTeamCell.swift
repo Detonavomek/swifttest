@@ -1,16 +1,10 @@
-//
-//  LeagueTeamCell.swift
-//  PremierLeague
-//
-//  Created by anton on 7/11/16.
-//  Copyright © 2016 organization. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
+//League team information from league team list view controller
 class LeagueTeamCell: UITableViewCell {
     
+    //Bind view objects
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var PLabel: UILabel!
@@ -22,6 +16,7 @@ class LeagueTeamCell: UITableViewCell {
     @IBOutlet weak var GDLabel: UILabel!
     @IBOutlet weak var PtsLabel: UILabel!
     
+    //Set information from NSManagedObject to objects
     var leagueTeam: NSManagedObject! {
         didSet {
             numberLabel.text = String(leagueTeam.valueForKey("number")!)

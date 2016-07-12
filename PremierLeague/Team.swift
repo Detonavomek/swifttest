@@ -1,5 +1,6 @@
 import UIKit
 
+//Team structure with name, history and logo data
 struct Team {
     var name: String?
     var history: String?

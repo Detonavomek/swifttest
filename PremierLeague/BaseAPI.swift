@@ -1,5 +1,6 @@
 import Foundation
 
+//Base class to work with JSON API
 class BaseAPI
 {
     
@@ -18,6 +19,7 @@ class BaseAPI
     }
     
     func Req(){
+        //Send request and save responce to JSON object
         do{
             let dataVal = try NSURLConnection.sendSynchronousRequest(request, returningResponse: response)
             if let jsonResult = try NSJSONSerialization.JSONObjectWithData(dataVal, options: []) as? NSDictionary {

@@ -1,51 +1,41 @@
-//
-//  SettingsViewController.swift
-//  PremierLeague
-//
-//  Created by anton on 7/11/16.
-//  Copyright © 2016 organization. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
+//Settings page view controller
 class SettingsViewController: UIViewController {
     
+    //Bind view objects
     @IBOutlet weak var updateTimeLabel: UILabel!
+    @IBOutlet weak var updateButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func updateData(sender: AnyObject) {
+        //Disable update button
+        updateButton.enabled = false
+        
+        //Update teams and league teams
         let leagueTeamCtrl:LeagueTeamCore = LeagueTeamCore()
         leagueTeamCtrl.updateLeagueTeams()
         let teamCtrl:TeamCore = TeamCore()
         teamCtrl.updateTeams()
+        
+        //Update time label
         updateTimeLabel.text = "Last update: " + LeagueData.lastUpdate
+        
+        //Enable update button
+        updateButton.enabled = true
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        //Update time label
         updateTimeLabel.text = "Last update: " + LeagueData.lastUpdate
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

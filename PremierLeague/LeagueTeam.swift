@@ -1,5 +1,6 @@
 import UIKit
 
+//League team structure
 struct LeagueTeam {
     var number: Int
     var name: String?
